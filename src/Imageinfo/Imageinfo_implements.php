@@ -16,8 +16,6 @@ abstract class Imageinfo_implements
     /*  */
     public const PNG="PNG";
     /*  */
-    public const WEBP="WEBP";
-    /*  */
     public const BMP="BMP";
 
     use __to;

@@ -44,8 +44,6 @@ class Imageinfo extends Imageinfo\Imageinfo_implements
                 return self::JPEG;
             case IMAGETYPE_PNG:
                 return self::PNG;
-            case IMAGETYPE_WEBP:
-                return self::WEBP;
             case IMAGETYPE_BMP:
                 return self::BMP;
             default:
