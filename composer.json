@@ -1,0 +1,25 @@
+{
+  "name": "xltxlm/image",
+  "authors": [
+    {
+      "name": "copygithub",
+      "email": "xltxlm@qq.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "description":"图片处理库",
+  "require": {
+    "xltxlm/exception": "@dev",
+    "php": "~7.1",
+    "ext-gd": "*",
+    "xltxlm/classinfo": "@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "xltxlm\\image\\": [
+        "src/",
+        "./"
+      ]
+    }
+  }
+}
