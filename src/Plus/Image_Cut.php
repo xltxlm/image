@@ -12,6 +12,17 @@ trait Image_Cut
 {
     use  Image_Cut\Image_Cut_implements;
 
+    /**
+     * @param string $image_path
+     * @return static
+     */
+    public function setimage_path(string $image_path = "")
+    {
+        $this->image_path = $image_path;
+        return $this;
+    }
+
+
     public function __invoke()
     {
         $imageinfo = new Imageinfo($this->getimage_path());

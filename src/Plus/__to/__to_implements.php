@@ -2,6 +2,7 @@
 namespace xltxlm\image\Plus\__to;
 
 /**
+ * :Trait;
  * 基础类;
 */
 trait __to_implements
@@ -22,11 +23,8 @@ trait __to_implements
     * @param string $image_path;
     * @return $this
     */
-    public function setimage_path(string $image_path  = '')
-    {
-        $this->image_path = $image_path;
-        return $this;
-    }
+    abstract public function setimage_path(string $image_path  = "");
+
     /**
     *  ;
     *  @return ;

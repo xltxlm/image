@@ -5,6 +5,7 @@ use \xltxlm\image\Plus\__to;
 use \xltxlm\classinfo\Features\__Object_toJson;
 
 /**
+ * :类;
  * 图片的基础信息;
 */
 abstract class Imageinfo_implements
@@ -21,26 +22,6 @@ abstract class Imageinfo_implements
     use __to;
     use __Object_toJson;
 
-    /* @var string  图片的路径 */
-    protected $image_path = '';
-
-    /**
-    * @return string;
-    */
-    public function getimage_path():string
-    {
-        return $this->image_path;
-    }
-
-    /**
-    * @param string $image_path;
-    * @return $this
-    */
-    public function setimage_path(string $image_path  = '')
-    {
-        $this->image_path = $image_path;
-        return $this;
-    }
     /* @var int  宽度 */
     protected $width = 0;
     
@@ -58,6 +39,7 @@ abstract class Imageinfo_implements
         $this->width = $width;
         return $this;
     }
+
     /* @var int  高度 */
     protected $height = 0;
     
@@ -75,6 +57,7 @@ abstract class Imageinfo_implements
         $this->height = $height;
         return $this;
     }
+
     /* @var string  类似这个	image/gif */
     protected $mime_type = '';
 
@@ -87,11 +70,12 @@ abstract class Imageinfo_implements
     * @param string $mime_type;
     * @return $this
     */
-    protected function setmime_type(string $mime_type  = '')
+    protected function setmime_type(string $mime_type  = "")
     {
         $this->mime_type = $mime_type;
         return $this;
     }
+
     /* @var int  文件大小 */
     protected $filesize = 0;
     
@@ -109,6 +93,7 @@ abstract class Imageinfo_implements
         $this->filesize = $filesize;
         return $this;
     }
+
     /* @var array  调用原生的函数 */
     protected $PHP_imagesize = [];
 

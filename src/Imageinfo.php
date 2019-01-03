@@ -9,11 +9,14 @@ use xltxlm\image\Exception\Exception_Image_type_Error;
  */
 class Imageinfo extends Imageinfo\Imageinfo_implements
 {
-    public function __construct(string $image_path = null)
+
+    public function setimage_path(string $image_path = "")
     {
-        parent::__construct($image_path);
+        $this->image_path = $image_path;
         $this->getPHP_imagesize(true);
+        return $this;
     }
+
 
     protected function Real_getPHP_imagesize(): array
     {
