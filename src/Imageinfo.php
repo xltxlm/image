@@ -60,4 +60,33 @@ class Imageinfo extends Imageinfo\Imageinfo_implements
         return filesize($this->getimage_path());
     }
 
+    //判断是否是一个合法的文件文件
+    public function getvalid_imagefile(): bool
+    {
+        try {
+            $this->getimage_type();
+        } catch (\Exception $e) {
+            return $this->valid_imagefile = false;
+        }
+        return $this->valid_imagefile = true;
+    }
+
+
+    //返回图像的句柄
+    public function __invoke()
+    {
+        switch ($this->getPHP_imagesize()[2]) {
+            case IMAGETYPE_GIF:
+                return imagecreatefromgif($this->getimage_path());
+            case IMAGETYPE_JPEG:
+                return imagecreatefromjpeg($this->getimage_path());
+            case IMAGETYPE_PNG:
+                return imagecreatefrompng($this->getimage_path());
+            case IMAGETYPE_BMP:
+                return imagecreatefrombmp($this->getimage_path());
+            default:
+                throw new Exception_Image_type_Error($this->__Object_toJson());
+        }
+    }
+
 }
