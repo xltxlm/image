@@ -20,7 +20,8 @@ class Imageinfo extends Imageinfo\Imageinfo_implements
 
     protected function Real_getPHP_imagesize(): array
     {
-        return getimagesize($this->getimage_path());
+        $getimagesize = getimagesize($this->getimage_path());
+        return $getimagesize;
     }
 
     public function getwidth(): int
@@ -59,18 +60,6 @@ class Imageinfo extends Imageinfo\Imageinfo_implements
     {
         return filesize($this->getimage_path());
     }
-
-    //判断是否是一个合法的文件文件
-    public function getvalid_imagefile(): bool
-    {
-        try {
-            $this->getimage_type();
-        } catch (\Exception $e) {
-            return $this->valid_imagefile = false;
-        }
-        return $this->valid_imagefile = true;
-    }
-
 
     //返回图像的句柄
     public function __invoke()

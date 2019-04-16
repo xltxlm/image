@@ -176,38 +176,6 @@ abstract class Imageinfo_implements
 
 
 
-/* @var bool  检测是否是合法的图片格式 */
-    protected $valid_imagefile = false;
-    
-
-
-
-
-    /**
-    * @return bool;
-    */
-            abstract public function getvalid_imagefile():bool;
-    
-            public function isvalid_imagefile():bool        {
-        return $this->getvalid_imagefile();
-        }
-    
-
-
-
-
-/**
-* @param bool $valid_imagefile;
-* @return $this
-*/
-    public function setvalid_imagefile(bool $valid_imagefile  = false)
-    {
-    $this->valid_imagefile = $valid_imagefile;
-    return $this;
-    }
-
-
-
 /**
 *  返回图片的资源句柄;
 *  @return ;
