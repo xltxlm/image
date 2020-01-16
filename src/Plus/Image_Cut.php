@@ -60,7 +60,18 @@ trait Image_Cut
         }
 
         imagecopyresampled($image_new, $image, $dst_x, $dst_y, 0, 0, $new_width, $new_height, $imageinfo->getwidth(), $imageinfo->getheight());
-        imagejpeg($image_new, $this->getsavefile());
+
+        if ($this->isoutasinput_format() && $imageinfo->getimage_type() == Imageinfo::JPEG) {
+            imagejpeg($image_new, $this->getsavefile());
+        } elseif ($this->isoutasinput_format() && $imageinfo->getimage_type() == Imageinfo::PNG) {
+            imagepng($image_new, $this->getsavefile());
+        } elseif ($this->isoutasinput_format() && $imageinfo->getimage_type() == Imageinfo::GIF) {
+            imagegif($image_new, $this->getsavefile());
+        } elseif ($this->isoutasinput_format() && $imageinfo->getimage_type() == Imageinfo::BMP) {
+            imagebmp($image_new, $this->getsavefile());
+        } else {
+            imagepng($image_new, $this->getsavefile());
+        }
     }
 
 }
