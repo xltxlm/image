@@ -8,3 +8,5 @@ php_errors.log
 log@*.json
 vendor/**/.git
 vendor
+/test/cut1.php
+/test/image_new.jpeg
